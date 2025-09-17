@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Urdu/Hindi Text → Presentation Slides — Free Online Tool</title>
+  <meta name="description" content="Urdu & Hindi text to presentation slides. Teachers, students, NGOs and small businesses can instantly convert notes into colorful PPTX decks. SEO-friendly, free, no signup." />
+  <meta name="keywords" content="Urdu slides, Urdu to PPT, Hindi slides, text to pptx, lecture slides Urdu, class slides Urdu, presentation generator Urdu, convert urdu to powerpoint" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Urdu/Hindi Text → Presentation Slides — Free Online Tool" />
+  <meta property="og:description" content="Convert Urdu or Hindi text into colorful, ready-to-present PPTX slides. Templates for students, teachers, NGOs & businesses." />
+  <meta property="og:image" content="https://yourdomain.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Urdu/Hindi Text → Presentation Slides" />
+  <meta name="twitter:description" content="Instantly convert Urdu/Hindi notes into PPTX slides for class, meetings, or clients." />
+  <meta name="twitter:image" content="https://yourdomain.com/og-image.png" />
+
+  <!-- Structured data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Urdu/Hindi Text to Presentation",
+    "url": "https://yourdomain.com/",
+    "description": "Convert Urdu or Hindi text into colorful PPTX slides instantly. Templates for students, teachers, NGOs and small businesses.",
+    "applicationCategory": "DeveloperTool",
+    "operatingSystem": "Web",
+    "author": {"@type":"Organization","name":"YourNameOrCompany"}
+  }
+  </script>
+
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" crossorigin="anonymous">
+  <style>
+    :root{ --maxw:1000px; --accent:#0f62fe; --muted:#6b7280 }
+    body{font-family: Noto Nastaliq Urdu, Noto Sans, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; padding:20px;background:#fcfcff;color:#081426}
+    .wrap{max-width:var(--maxw);margin:0 auto}
+    header{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+    h1{font-size:22px;margin:0}
+    p.lead{color:var(--muted);margin:0}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    input[type=text], select{padding:10px;border-radius:8px;border:1px solid #e6edf3;min-width:180px}
+    textarea{width:100%;min-height:260px;padding:12px;border-radius:8px;border:1px solid #e6edf3;font:inherit;resize:vertical}
+    button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    .secondary{background:#374151}
+    .cols{display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:16px}
+    .card{background:white;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(10,20,40,0.04)}
+    .preview{padding:18px;min-height:300px}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media (max-width:900px){.cols{grid-template-columns:1fr}}
+    .role-pill{padding:6px 10px;border-radius:999px;border:1px solid #e6edf3;background:#fff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Urdu / Hindi Text → Presentation Slides</h1>
+      <p class="lead">Paste your Urdu or Hindi notes and get a colorful, ready-to-present PPTX. Templates adapt by role: Students, Teachers, NGOs & Small Businesses.</p>
+    </header>
+
+    <div class="card">
+      <div class="controls">
+        <input id="titleInput" type="text" placeholder="سائٹ/عنوان — Title (used for filename)" value="میری پیشکش — My Presentation" />
+        <select id="languageSelect" title="Language">
+          <option value="ur">اردو — Urdu</option>
+          <option value="hi">हिन्दी — Hindi</option>
+          <option value="en">English</option>
+        </select>
+        <select id="roleSelect" title="Role">
+          <option value="student">طالب علم — Student</option>
+          <option value="teacher">استاد — Teacher</option>
+          <option value="ngo">این جی او — NGO</option>
+          <option value="business">چھوٹا کاروبار — Small Business</option>
+        </select>
+        <button id="previewBtn" class="secondary">Preview</button>
+        <button id="pptBtn">Download Presentation</button>
+        <button id="pdfBtn">Download PDF</button>
+      </div>
+
+      <textarea id="editor" placeholder="اپنا متن یہاں چسپاں کریں — Paste or type your Urdu/Hindi/English text here..."># تعارفی سلائیڈ
+
+یہ ایک مثال متن ہے۔
+
+- پہلا نکتہ
+- دوسرا نکتہ
+
+# نتیجہ
+
+خلاصہ اور اگلے اقدامات</textarea>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <div class="meta">Preview (click Preview to render):</div>
+        <div id="preview" class="preview">
+          <div class="meta">No preview yet — click Preview</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="meta">About this tool</div>
+        <p>Built for Urdu/Hindi speakers — automatic slide layouts, right-to-left support for Urdu, role-specific templates (student visuals, teacher lecture layouts, NGO impact slides, business pitch slides).</p>
+        <div style="height:10px"></div>
+        <div class="meta">Why this ranks well</div>
+        <ul style="padding-left:18px">
+          <li>Targeted keywords in Urdu/Hindi & English</li>
+          <li>Static HTML content for fast indexing</li>
+          <li>Schema.org & Open Graph meta included</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>Host on your custom domain, submit sitemap to Google Search Console, and publish landing pages for each role (student, teacher, NGO, business) for best SEO.</footer>
+  </div>
+
+  <!-- Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.10.0/dist/pptxgen.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+  <script>
+    // --- Helper functions ---
+    const titleInput = document.getElementById('titleInput');
+    const editor = document.getElementById('editor');
+    const preview = document.getElementById('preview');
+    const languageSelect = document.getElementById('languageSelect');
+    const roleSelect = document.getElementById('roleSelect');
+    const previewBtn = document.getElementById('previewBtn');
+    const pptBtn = document.getElementById('pptBtn');
+    const pdfBtn = document.getElementById('pdfBtn');
+
+    function escapeHtml(str){
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function markdownToBlocks(text){
+      // Split into slides: # heading starts slide; blank line separates paragraphs; - or * as bullets
+      const lines = text.split('\n');
+      const slides = [];
+      let cur = {title:'', bullets:[]};
+      for(let raw of lines){
+        const line = raw.trim();
+        if(!line){ if(cur.title||cur.bullets.length){ slides.push(cur); cur={title:'',bullets:[]}; } continue; }
+        if(line.startsWith('# ')){
+          if(cur.title||cur.bullets.length) slides.push(cur);
+          cur = {title: line.replace('# ','').trim(), bullets: []};
+        } else if(line.startsWith('- ')||line.startsWith('* ')){
+          cur.bullets.push(line.replace(/^[-*]\s+/,''));
+        } else {
+          if(!cur.title){ const first = line.split(/[\.\?\!]/)[0]; cur.title = first || line; const rest = line.substring(first.length).trim(); if(rest) cur.bullets.push(rest); }
+          else cur.bullets.push(line);
+        }
+      }
+      if(cur.title||cur.bullets.length) slides.push(cur);
+      if(!slides.length) slides.push({title:'Untitled', bullets:['No content provided.']});
+      return slides;
+    }
+
+    function renderPreview(){
+      const blocks = markdownToBlocks(editor.value);
+      const lang = languageSelect.value;
+      const role = roleSelect.value;
+
+      // Render simple HTML preview (not full slide look)
+      let html = '';
+      blocks.forEach((b, i)=>{
+        html += `<div style="margin-bottom:12px;padding:10px;border-radius:8px;background:#fff;box-shadow:0 4px 10px rgba(2,6,23,0.04);">
+                   <h3 style=\"margin:0 0 6px 0;\">${escapeHtml(b.title)}</h3>
+                   <div>${b.bullets.map(x=>'<p style=\\"margin:6px 0;\\">'+escapeHtml(x)+'</p>').join('')}</div>
+                 </div>`;
+      });
+      preview.innerHTML = html;
+    }
+
+    previewBtn.addEventListener('click', ()=>{ renderPreview(); window.scrollTo({top: preview.offsetTop-20, behavior:'smooth'}); });
+
+    // Role-based image/graphics suggestions
+    function roleImageFor(role, idx){
+      // Use Unsplash source images for variety (CORS-friendly)
+      const studentImgs = [
+        'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=60&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=1200&q=60&auto=format&fit=crop'
+      ];
+      const teacherImgs = [
+        'https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1200&q=60&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1523292561606-7665f9f0b3b1?w=1200&q=60&auto=format&fit=crop'
+      ];
+      const ngoImgs = [
+        'https://images.unsplash.com/photo-1520975698515-1f0f9dd7d5a1?w=1200&q=60&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=60&auto=format&fit=crop'
+      ];
+      const bizImgs = [
+        'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=60&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=60&auto=format&fit=crop'
+      ];
+      const map = {student: studentImgs, teacher: teacherImgs, ngo: ngoImgs, business: bizImgs};
+      const arr = map[role] || studentImgs; return arr[idx % arr.length];
+    }
+
+    function randomPalette(){
+      const palettes = [
+        ['#0f172a','#06b6d4','#22c55e','#f59e0b'],
+        ['#111827','#6366f1','#a78bfa','#fb7185'],
+        ['#04293a','#0fb9b1','#ffd166','#ef476f']
+      ]; return palettes[Math.floor(Math.random()*palettes.length)];
+    }
+
+    // --- PPTX Generation ---
+    function generatePptx(){
+      const title = titleInput.value.trim() || 'Presentation';
+      const role = roleSelect.value;
+      const lang = languageSelect.value;
+      const author = '';
+      const slides = markdownToBlocks(editor.value);
+
+      const pres = new PptxGenJS();
+      pres.layout = 'LAYOUT_WIDE';
+      if(author) pres.author = author;
+
+      const palette = randomPalette();
+
+      slides.forEach((s, idx)=>{
+        const slide = pres.addSlide();
+        const bg = palette[idx % palette.length];
+        slide.background = { fill: bg };
+
+        if(idx === 0){
+          // Title slide styling varies by role
+          if(role === 'student'){
+            slide.addText(s.title, { x:0.5, y:1.0, w:9, h:1.2, align:'center', color:'FFFFFF', fontSize:36, bold:true });
+            slide.addImage({ x:3.5, y:2.3, w:3, h:2, src: roleImageFor('student', idx) });
+          } else if(role === 'teacher'){
+            slide.addText(s.title, { x:0.5, y:0.9, w:9, h:1.2, align:'center', color:'FFFFFF', fontSize:34, bold:true });
+            slide.addText('Lecture • ' + (new Date()).getFullYear(), { x:0.5, y:2.2, w:9, h:0.6, align:'center', color:'FFFFFF', fontSize:12 });
+          } else if(role === 'ngo'){
+            slide.addText(s.title, { x:0.5, y:1.0, w:9, h:1.2, align:'center', color:'FFFFFF', fontSize:34, bold:true });
+            slide.addImage({ x:7.2, y:0.6, w:1.2, h:1.2, src: roleImageFor('ngo', 0) });
+          } else {
+            // business
+            slide.addText(s.title, { x:0.5, y:1.0, w:9, h:1.2, align:'center', color:'FFFFFF', fontSize:36, bold:true });
+            slide.addText('Pitch • Overview', { x:0.5, y:2.2, w:9, h:0.6, align:'center', color:'FFFFFF', fontSize:12 });
+          }
+        } else {
+          // content slides: white card for readability
+          slide.addShape(pres.ShapeType.rect, { x:0.5, y:0.5, w:9, h:5.1, fill:{color:'FFFFFF'}, line:{color:bg} });
+          slide.addText(s.title || 'Slide ' + (idx+1), { x:0.8, y:0.7, w:8.4, h:0.8, color:'#0f172a', fontSize:22, bold:true });
+          if(s.bullets && s.bullets.length){
+            slide.addText(s.bullets.map(b=> '• ' + b).join('\n'), { x:0.9, y:1.6, w:8.2, h:4.0, color:'#0f172a', fontSize:16, lineSpacing:18 });
+          } else {
+            slide.addImage({ x:6.8, y:1.2, w:2.1, h:2.1, src: roleImageFor(role, idx) });
+            slide.addText(' '+(s.title||''), { x:0.9, y:1.6, w:5.5, h:4.0, color:'#0f172a', fontSize:16 });
+          }
+        }
+      });
+
+      pres.writeFile({ fileName: title + '.pptx' });
+    }
+
+    // PDF generation uses the preview HTML
+    function generatePdf(){
+      renderPreview();
+      setTimeout(()=>{
+        html2pdf().set({ margin: 15, filename:(titleInput.value.trim()||'article') + '.pdf', image:{type:'jpeg',quality:0.98}, html2canvas:{scale:2}, jsPDF:{unit:'mm',format:'a4',orientation:'portrait'} }).from(preview).save();
+      },120);
+    }
+
+    pptBtn.addEventListener('click', generatePptx);
+    pdfBtn.addEventListener('click', generatePdf);
+
+    // initial preview
+    renderPreview();
+  </script>
+
+  <!--
+    SEO & Launch Plan (KEEP THIS COMMENT IN YOUR REPO root README OR copy to a /docs page)
+
+    1) Recommended repository structure for GitHub Pages (use custom domain later):
+       - index.html  (this file)
+       - /assets/og-image.png (social preview)
+       - /sitemap.xml
+       - /robots.txt
+       - /landing/student.html, /landing/teacher.html, /landing/ngo.html, /landing/business.html
+       - /blog/ (for SEO content)
+
+    2) Sitemap (example) - create sitemap.xml with these URLs:
+       https://yourdomain.com/
+       https://yourdomain.com/landing/student
+       https://yourdomain.com/landing/teacher
+       https://yourdomain.com/landing/ngo
+       https://yourdomain.com/landing/business
+       https://yourdomain.com/blog/how-to-convert-urdu-notes-to-slides
+
+    3) Robots.txt example:
+       User-agent: *
+       Allow: /
+       Sitemap: https://yourdomain.com/sitemap.xml
+
+    4) Suggested Landing Pages (high priority):
+       - /landing/student — keywords: "Urdu slides for students", "class slides Urdu", "notes to slides Urdu"
+       - /landing/teacher — keywords: "Urdu lecture slides", "teacher slides Urdu", "lesson plan to PPT Urdu"
+       - /landing/ngo — keywords: "NGO presentation Urdu", "impact slides Urdu", "report slides Urdu"
+       - /landing/business — keywords: "business pitch Urdu", "product pitch slides Hindi", "small business presentation Hindi"
+
+    5) Initial Blog Topics (SEO-optimized):
+       - "How to convert Urdu notes into slides (step-by-step)" — long-tail
+       - "Top 10 tips to present in Urdu: Slides, fonts, and visuals"
+       - "How teachers can create lecture slides in Urdu in 5 minutes"
+       - "Best fonts for Urdu presentations" (include downloadable font + examples)
+       - "Convert Hindi lecture notes to presentation — beginner guide"
+
+    6) Target Keywords (start with long-tail):
+       - Urdu slides generator
+       - Urdu to pptx converter free
+       - Hindi text to presentation
+       - class slides Urdu
+       - lecture slides Urdu generator
+
+    7) On-page SEO checklist (for each landing & blog page):
+       - Unique title tag with target keyword
+       - Meta description (100-160 chars) including the keyword
+       - H1 with exact keyword phrase
+       - 800+ words for in-depth blog posts (where practical)
+       - Internal links between landing pages and blog posts
+       - OG/Twitter meta tags and an attractive OG image (1200x630)
+       - Add schema.org JSON-LD where appropriate
+
+    8) Quick launch checklist:
+       - Add a custom domain & configure CNAME on GitHub Pages
+       - Add sitemap.xml and robots.txt to the repo root
+       - Submit domain to Google Search Console and submit sitemap
+       - Create 4 landing pages (student/teacher/ngo/business) each ~400-600 words targeting long-tail keywords
+       - Publish 3 blog posts from the list above
+       - Share in local channels (Facebook groups, teacher forums, WhatsApp groups) to get initial traffic and links
+
+    9) Analytics & Monitoring:
+       - Add Google Analytics / GA4 script to index.html (after creating account)
+       - Add Google Search Console verification (HTML file or DNS)
+       - Monitor impressions/clicks and adjust content
+
+    10) Notes about fonts & RTL:
+       - For Urdu use Noto Nastaliq Urdu or Noto Nastaliq Urdu UI webfonts. Host them via Google Fonts or self-host.
+       - Make sure text direction (dir="rtl") is set on pages meant for Urdu. This page sets dir="rtl" on <html>.
+
+    If you want, I can now:
+      A) Generate the 4 landing page HTML templates (student/teacher/ngo/business) with SEO-optimized content ready to upload.
+      B) Create sitemap.xml and robots.txt and add them to the repo file (as text to copy).
+      C) Create OG preview image (1200x630) and provide a downloadable PNG.
+
+    Tell me which of A, B or C to do next and I'll create the files ready for GitHub.
+  -->
+</body>
+</html>
