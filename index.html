@@ -345,6 +345,40 @@
 
     Tell me which of A, B or C to do next and I'll create the files ready for GitHub.
   -->
+      <!-- your other code here -->
+
+  <script>
+    // find the important elements
+    const languageSelect = document.getElementById('languageSelect');
+    const editor = document.getElementById('editor');
+    const preview = document.getElementById('preview');
+    const titleInput = document.getElementById('titleInput');
+
+    // this function decides direction
+    function applyDirection(lang) {
+      // Urdu = RTL, everything else = LTR
+      const isRtl = (lang === 'ur');
+      
+      // editor box
+      editor.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+      // preview box
+      preview.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+      // align preview text
+      preview.style.textAlign = isRtl ? 'right' : 'left';
+      // title input
+      titleInput.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    }
+
+    // when you change the dropdown
+    languageSelect.addEventListener('change', () => {
+      applyDirection(languageSelect.value);
+    });
+
+    // run once when the page loads
+    applyDirection(languageSelect.value);
+  </script>
+</body>
+</html>
 </body>
   <footer>
   <a href="index.html">Home</a> | 
