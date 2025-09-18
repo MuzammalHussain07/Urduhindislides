@@ -154,11 +154,49 @@
     }
 
     function renderPreview(){
-      const blocks = markdownToBlocks(editor.value);
-      const lang = languageSelect.value;
-      const role = roleSelect.value;
+     <script>
+  function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-      // Render simple HTML preview (not full slide look)
+  function markdownLiteToHtml(text) {
+    const lines = text.split('\n');
+    let html = '';
+    for (let line of lines) {
+      line = line.trim();
+      if (!line) { html += '<p></p>'; continue; }
+      if (line.startsWith('# ')) html += `<h2>${escapeHtml(line.slice(2))}</h2>`;
+      else if (line.startsWith('## ')) html += `<h3>${escapeHtml(line.slice(3))}</h3>`;
+      else if (line.startsWith('- ') || line.startsWith('* ')) html += `<li>${escapeHtml(line.slice(2))}</li>`;
+      else html += `<p>${escapeHtml(line)}</p>`;
+    }
+    // wrap list items properly
+    return html.replace(/(<li>.*<\/li>)/gms, (m) => `<ul>${m}</ul>`);
+  }
+
+  function renderPreview(){
+    const lang = languageSelect.value;
+    const isRtl = (lang === 'ur'); // change if you want Hindi RTL too
+    preview.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    preview.style.textAlign = isRtl ? 'right' : 'left';
+
+    const title = escapeHtml(titleInput.value.trim());
+    const contentHtml = markdownLiteToHtml(editor.value);
+
+    preview.innerHTML = `
+      <div style="font-family: 'Noto Nastaliq Urdu', 'Noto Sans', serif;">
+        ${ title ? `<div style="text-align:${isRtl ? 'center' : 'center'}"><h1 style="margin:6px 0;">${title}</h1></div>` : '' }
+        <div>${contentHtml}</div>
+      </div>`;
+  }
+
+  // wire preview button if you have one:
+  document.getElementById('previewBtn')?.addEventListener('click', renderPreview);
+  // auto-update live when typing:
+  editor.addEventListener('input', () => { /* optional: live preview */ /* renderPreview(); */ });
+
+  // initial render
+  renderPreview();
+</script>
+
       let html = '';
       blocks.forEach((b, i)=>{
         html += `<div style="margin-bottom:12px;padding:10px;border-radius:8px;background:#fff;box-shadow:0 4px 10px rgba(2,6,23,0.04);">
